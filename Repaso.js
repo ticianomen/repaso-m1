@@ -223,11 +223,11 @@ function sortByDni(obj) {}
 //  8            8
 //  9            9
 //  10           A
-//  12           B
-//  13           C
-//  14           D
-//  15           E
-//  16           F
+//  11           B
+//  12           C
+//  13           D
+//  14           E
+//  15           F
 
 function decToHex(number) {}
 
