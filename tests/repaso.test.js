@@ -92,11 +92,11 @@ describe('Tests Repaso!!', function () {
     xdescribe('Closures', function () {
         describe('EJERCICIO D', function () {
             it('growUp deberia devolver el String correspondiente', () => {
-                expect(growUp()).to.equal('Pepe riene ahora 29 años');
-                expect(growUp()).to.equal('Pepe riene ahora 30 años');
-                expect(growUp()).to.equal('Pepe riene ahora 31 años');
-                expect(growUp()).to.equal('Pepe riene ahora 32 años');
-                expect(growUp()).to.equal('Pepe riene ahora 33 años');
+                expect(growUp()).to.equal('Pepe tiene ahora 29 años');
+                expect(growUp()).to.equal('Pepe tiene ahora 30 años');
+                expect(growUp()).to.equal('Pepe tiene ahora 31 años');
+                expect(growUp()).to.equal('Pepe tiene ahora 32 años');
+                expect(growUp()).to.equal('Pepe tiene ahora 33 años');
             });
         });
     });
