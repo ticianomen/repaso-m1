@@ -36,7 +36,7 @@ describe('Tests Repaso!!', function () {
         });
     });
 
-    describe('Recursion', function () {
+    xdescribe('Recursion', function () {
         describe('EJERCICIO B', function () {
             it('deberia devolver true si el numero es palidromo', () => {
                 expect(isPalindrome(555)).to.equal(true);
@@ -59,37 +59,7 @@ describe('Tests Repaso!!', function () {
         });
     });
 
-    xdescribe('Recursion y Stack', function () {
-        describe('EJERCICIO C', function () {
-            let queue;
-
-            beforeEach(() => {
-                queue = new Queue();
-            });
-            it('la funcion deberia dar vuelta el stack, Test 1', () => {
-                queue.enqueue(1);
-                queue.enqueue(2);
-                queue.enqueue(3);
-                queue.enqueue(4);
-                expect(queue.reverseStack()[0]).to.equal(4);
-                expect(queue.reverseStack()[1]).to.equal(3);
-                expect(queue.reverseStack()[2]).to.equal(2);
-                expect(queue.reverseStack()[3]).to.equal(1);
-            });
-            it('la funcion deberia dar vuelta el stack, Test 2', () => {
-                queue.enqueue(12);
-                queue.enqueue(33);
-                queue.enqueue(22);
-                queue.enqueue(4);
-                expect(queue.reverseStack()[0]).to.equal(4);
-                expect(queue.reverseStack()[1]).to.equal(22);
-                expect(queue.reverseStack()[2]).to.equal(33);
-                expect(queue.reverseStack()[3]).to.equal(12);
-            });
-        });
-    });
-
-    describe('Closures', function () {
+    xdescribe('Closures', function () {
         describe('EJERCICIO D', function () {
             it('growUp deberia devolver el String correspondiente', () => {
                 const newAge = growUp();
@@ -121,7 +91,7 @@ describe('Tests Repaso!!', function () {
             });
         });
     });
-    describe('Queue', function () {
+    xdescribe('Queue', function () {
         describe('EJERCICIO F', () => {
             let queue;
             beforeEach(() => {
@@ -147,7 +117,7 @@ describe('Tests Repaso!!', function () {
         });
     });
 
-    describe('Sort', function () {
+    xdescribe('Sort', function () {
         describe('EJERCICIO G', function () {
             const objetoPersonas = [
                 {
