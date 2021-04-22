@@ -147,7 +147,7 @@ describe('Tests Repaso!!', function () {
         });
     });
 
-    xdescribe('Sort', function () {
+    describe('Sort', function () {
         describe('EJERCICIO G', function () {
             const objetoPersonas = [
                 {
@@ -185,10 +185,10 @@ describe('Tests Repaso!!', function () {
             ];
             it('deberia ordenar el array de objetos segun DNI', () => {
                 const sortObj = sortByDni(objetoPersonas);
-                expect(sortObj[0].dni).to.be(90919293);
-                expect(sortObj[1].dni).to.be(76757473);
-                expect(sortObj[2].dni).to.be(40607080);
-                expect(sortObj[3].dni).to.be(23242526);
+                expect(sortObj[0].dni).to.equal(90919293);
+                expect(sortObj[1].dni).to.equal(76757473);
+                expect(sortObj[2].dni).to.equal(40607080);
+                expect(sortObj[3].dni).to.equal(23242526);
             });
         });
     });
