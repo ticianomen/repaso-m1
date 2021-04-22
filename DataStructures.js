@@ -115,7 +115,7 @@ BinarySearchTree.prototype.size = function () {
     return 1 + this.left.size() + this.right.size();
 };
 
-BinarySearchTree.prototype.breadthFirstForEach = function (fx) {
+BinarySearchTree.prototype.breadthFirstForEach = function () {
     let visited = [];
     let queue = [];
     let current = this;
@@ -124,7 +124,6 @@ BinarySearchTree.prototype.breadthFirstForEach = function (fx) {
     while (queue.length) {
         current = queue.shift();
         visited.push(current.value);
-        fx(current.value);
         if (current.left !== null) queue.push(current.left);
         if (current.right !== null) queue.push(current.right);
     }
