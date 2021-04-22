@@ -80,7 +80,13 @@ Queue.prototype.reverseStack = function () {};
 // Si vuelvo a llamar a growUp(), deberia devolver "Pepe tiene ahora 30 años."
 // Y asi consecutivamente...
 
-function growUp() {}
+function growUp() {
+    let years = 28;
+    return function () {
+        years++;
+        return `Pepe tiene ahora ${years} años`;
+    };
+}
 
 /*****************************************************************/
 /****************************** BST ******************************/
