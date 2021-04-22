@@ -89,7 +89,7 @@ describe('Tests Repaso!!', function () {
         });
     });
 
-    describe('Closures', function () {
+    xdescribe('Closures', function () {
         describe('EJERCICIO D', function () {
             it('growUp deberia devolver el String correspondiente', () => {
                 const newAge = growUp();
