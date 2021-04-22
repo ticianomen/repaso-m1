@@ -50,11 +50,11 @@ describe('Tests Repaso!!', function () {
                 expect(isPalindrome(400045)).to.equal(false);
                 expect(isPalindrome(1000003)).to.equal(false);
             });
-            it('deberia devolver null si el numero es menor o igual que 99 o es negativo o decimal', () => {
-                expect(isPalindrome(-123)).to.equal(null);
-                expect(isPalindrome(1.555)).to.equal(null);
-                expect(isPalindrome(22)).to.equal(null);
-                expect(isPalindrome(0)).to.equal(null);
+            it('deberia devolver false si el numero es menor o igual que 0 o decimal', () => {
+                expect(isPalindrome(-123)).to.equal(false);
+                expect(isPalindrome(1.555)).to.equal(false);
+                expect(isPalindrome(3.14)).to.equal(false);
+                expect(isPalindrome(0)).to.equal(false);
             });
         });
     });

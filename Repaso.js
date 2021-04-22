@@ -40,8 +40,8 @@ LinkedList.prototype.search = function (value) {};
 
 // Ejercicio B.
 // Implementar una funcion que retorne true o false si el numero pasado por parametro es palindromo.
-// Controlar que el numero pasado por parametro tengas mas de tres cifras, si el nro pasado tiene 2 o menos cifras
-// o es negativo devolver null.
+// Controlar que el numero pasado por parametro sea menor o igual que 0, o si es
+// decimal, devolver false.
 // Palindromo es una expresion que se lee igual de derecha a izquierda o viceversa.
 // Ejemplo de numeros palindromos: 1001, 252, 2001, 2222, 9889.
 
