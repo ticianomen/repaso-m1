@@ -11,7 +11,7 @@ const {
 } = require('../Repaso.js');
 
 describe('Tests Repaso!!', function () {
-    xdescribe('Linked Lists', function () {
+    describe('Linked Lists', function () {
         describe('EJERCICIO A', function () {
             let linkedList;
             beforeEach(() => {
@@ -36,7 +36,7 @@ describe('Tests Repaso!!', function () {
         });
     });
 
-    xdescribe('Recursion', function () {
+    describe('Recursion', function () {
         describe('EJERCICIO B', function () {
             it('deberia devolver true si el numero es palidromo', () => {
                 expect(isPalindrome(555)).to.equal(true);
@@ -59,7 +59,7 @@ describe('Tests Repaso!!', function () {
         });
     });
 
-    xdescribe('Closures', function () {
+    describe('Closures', function () {
         describe('EJERCICIO D', function () {
             it('growUp deberia devolver el String correspondiente', () => {
                 const newAge = growUp();
@@ -72,7 +72,7 @@ describe('Tests Repaso!!', function () {
         });
     });
 
-    xdescribe('Binary Search Tree', function () {
+    describe('Binary Search Tree', function () {
         describe('EJERCICIO E', () => {
             let bst;
             beforeEach(() => {
@@ -91,7 +91,7 @@ describe('Tests Repaso!!', function () {
             });
         });
     });
-    xdescribe('Queue', function () {
+    describe('Queue', function () {
         describe('EJERCICIO F', () => {
             let queue;
             beforeEach(() => {
@@ -117,7 +117,7 @@ describe('Tests Repaso!!', function () {
         });
     });
 
-    xdescribe('Sort', function () {
+    describe('Sort', function () {
         describe('EJERCICIO G', function () {
             const objetoPersonas = [
                 {

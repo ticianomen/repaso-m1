@@ -28,11 +28,31 @@ const { Queue, LinkedList, BinarySearchTree } = require('./DataStructures.js');
 // search(value) ---> Devuelve la posicion del nodo con el valor recibido por parametro, contando desde 0.
 // myLinkedList.search(16) ---> devuelve 2.
 
-LinkedList.prototype.getHead = function () {};
+LinkedList.prototype.getHead = function () {
+    return this.head.value
+};
 
-LinkedList.prototype.getTail = function () {};
+LinkedList.prototype.getTail = function () {
+    let current = this.head;
+    while(current.next){
+        current=current.next;
+    }
+        return current.value;
+    };
 
-LinkedList.prototype.search = function (value) {};
+LinkedList.prototype.search = function (value) {
+    var pointer = this.head;
+    var position = 0;
+    if (!pointer) return null;
+        if (pointer.value == value ) {
+        return position;
+    }
+    while (pointer) {
+        if(pointer.value === value) return position
+        pointer=pointer.next
+        position++;
+    }
+};
 
 /*****************************************************************/
 /*************************** Recursion ***************************/
@@ -45,7 +65,19 @@ LinkedList.prototype.search = function (value) {};
 // Palindromo es una expresion que se lee igual de derecha a izquierda o viceversa.
 // Ejemplo de numeros palindromos: 1001, 252, 2001, 2222, 9889.
 
-function isPalindrome(number) {}
+function isPalindrome(numero) {
+    if(numero<0 || numero%1 !== 0) return false;
+    var arr = Array.from(numero.toString());
+    var primero = arr.shift();
+    var ultimo = arr.pop();
+    if(primero!==ultimo) return false;
+    if(primero===ultimo && arr.length<=1) return true;
+    if(primero === ultimo && arr.length >1){
+        return isPalindrome(arr.join(''))
+    }
+    else return false
+};
+
 
 /*****************************************************************/
 /*********************** Recursion y Stack ***********************/
@@ -65,7 +97,15 @@ function isPalindrome(number) {}
 // 2
 // 1
 
-Queue.prototype.reverseStack = function () {};
+Queue.prototype.reverseStack = function (newArray = []) {
+    if(this.array.length >= 1){
+        newArray.push(this.array.pop());
+
+        this.reverseStack(newArray);
+    }
+
+    return newArray;
+};
 
 /*****************************************************************/
 /**************************** Closures ***************************/
@@ -80,7 +120,12 @@ Queue.prototype.reverseStack = function () {};
 // Si vuelvo a llamar a growUp(), deberia devolver "Pepe tiene ahora 30 años."
 // Y asi consecutivamente...
 
-function growUp() {}
+function growUp(parametro=29) {
+    
+    return function(){
+        return 'Pepe tiene ahora ' + parametro++ +' años';
+    }
+}
 
 /*****************************************************************/
 /****************************** BST ******************************/
@@ -93,8 +138,17 @@ function growUp() {}
 // Si se nos presenta un arbol como el que se encuentra en el archivo BST.png
 // la funcion deberia retornar [1, 5, 14].
 
-BinarySearchTree.prototype.getLeafs = function () {};
-
+BinarySearchTree.prototype.getLeafs = function (newArray = []) {
+    
+    if(!this.left && !this.right) return newArray.push(this.value);
+    if(this.left){
+        this.left.getLeafs(newArray);
+    }
+    if(this.right){
+        this.right.getLeafs(newArray);
+    }
+    return newArray;
+};
 /*****************************************************************/
 /***************************** QUEUE *****************************/
 /*****************************************************************/
@@ -106,7 +160,12 @@ BinarySearchTree.prototype.getLeafs = function () {};
 // Por ejemplo: [1, 2, 3, 4, 5, 6] --> [];
 // HINT: usar el metodo .isEmpty() de la clase Queue ya implementada.
 
-Queue.prototype.clearAll = function () {};
+Queue.prototype.clearAll = function () {
+    while(!this.isEmpty()){
+        this.dequeue();
+    }
+    return this;
+};
 
 /*****************************************************************/
 /***************************** SORT ******************************/
@@ -133,60 +192,25 @@ Queue.prototype.clearAll = function () {};
 //         email: 'mary.gon@hotmail.com',
 //         username: 'marymary321',
 //     },
-//     {
-//         dni: 90919293,
-//         nombre: 'Bartolomeo',
-//         apellido: 'Simpson',
-//         edad: 10,
-//         email: 'bartsimpson@gmail.com',
-//         username: 'elBarto',
-//     },
-//     {
-//         dni: 76757473,
-//         nombre: 'Doge',
-//         apellido: 'De Hoz',
-//         edad: 5,
-//         email: 'soyelperrofavorito@yahoo.com.ar',
-//         username: 'dogeOfficial',
-//     },
-// ];
 
-// Resultado: [
-//     {
-//         dni: 90919293,
-//         nombre: 'Bartolomeo',
-//         apellido: 'Simpson',
-//         edad: 10,
-//         email: 'bartsimpson@gmail.com',
-//         username: 'elBarto',
-//     },
-//     {
-//         dni: 76757473,
-//         nombre: 'Doge',
-//         apellido: 'De Hoz',
-//         edad: 5,
-//         email: 'soyelperrofavorito@yahoo.com.ar',
-//         username: 'dogeOfficial',
-//     },
-//     {
-//         dni: 40607080,
-//         nombre: 'Carlitos',
-//         apellido: 'Fulano',
-//         edad: 22,
-//         email: 'carlosfulano123@gmail.com',
-//         username: 'xXElCrackXx',
-//     },
-//     {
-//         dni: 23242526,
-//         nombre: 'Maria',
-//         apellido: 'Gonzalez',
-//         edad: 48,
-//         email: 'mary.gon@hotmail.com',
-//         username: 'marymary321',
-//     },
-// ];
 
-function sortByDni(obj) {}
+function sortByDni(obj) {
+    var huboCambio = true;
+    var temp = {}
+    while(huboCambio){// Complejidad O(N²)
+        huboCambio=false;
+        for(i = 0; i<obj.length-1 ; i++){
+            if(obj[i].dni < obj[i+1].dni){
+                temp=obj[i];
+                obj[i]=obj[i+1];
+                obj[i+1]=temp;
+                huboCambio= true;
+        }
+    }
+    }
+    return obj;
+
+}
 
 /*****************************************************************/
 /**************************** DESAFIO ****************************/
